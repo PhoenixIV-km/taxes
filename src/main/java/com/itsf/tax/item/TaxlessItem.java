@@ -1,7 +1,6 @@
-package com.itsf.tax.factory.item;
+package com.itsf.tax.item;
 
 import com.itsf.tax.enums.ItemType;
-import com.itsf.tax.utils.MathUtils;
 import java.math.BigDecimal;
 
 public class TaxlessItem extends Item {
@@ -11,7 +10,7 @@ public class TaxlessItem extends Item {
     }
 
     @Override
-    public BigDecimal computeTaxes() {
-        return isImported() ? MathUtils.rounding(getPrice().multiply(IMPORT_TAX_RATE)) : new BigDecimal(0);
+    protected BigDecimal getApplicableTaxRate(final BigDecimal basicRate, final BigDecimal importRate) {
+        return isImported() ? importRate : BigDecimal.ZERO;
     }
 }

@@ -1,14 +1,14 @@
 package com.itsf.tax.service;
 
-import com.itsf.tax.factory.item.Item;
+import com.itsf.tax.item.Item;
 import java.util.List;
 
 public interface TaxService {
 
     /**
-     * Compute the sales taxes of a list of items
+     * Generate the receipt for a list of items
      * @param items the list of items
-     * @return receipt details with taxes
+     * @return receipt details with taxes and total
      */
-    String compute(final List<Item> items);
+    String generateReceipt(final List<Item> items);
 }

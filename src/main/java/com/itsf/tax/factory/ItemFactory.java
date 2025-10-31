@@ -1,7 +1,7 @@
-package com.itsf.tax.factory.creator;
+package com.itsf.tax.factory;
 
 import com.itsf.tax.enums.ItemType;
-import com.itsf.tax.factory.item.Item;
+import com.itsf.tax.item.Item;
 import java.math.BigDecimal;
 
 public interface ItemFactory {

@@ -1,8 +1,8 @@
 package com.itsf.tax.controller;
 
 import com.itsf.tax.enums.ItemType;
-import com.itsf.tax.factory.creator.ItemFactory;
-import com.itsf.tax.factory.item.Item;
+import com.itsf.tax.factory.ItemFactory;
+import com.itsf.tax.item.Item;
 import com.itsf.tax.service.TaxService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +28,7 @@ public class TaxController {
         itemList.add(itemFactory.createItem(ItemType.BOOK, new BigDecimal("12.49"), "book", Boolean.FALSE, 1));
         itemList.add(itemFactory.createItem(ItemType.ENTERTAINMENT, new BigDecimal("14.99"), "music CD", Boolean.FALSE, 1));
         itemList.add(itemFactory.createItem(ItemType.FOOD, new BigDecimal("0.85"), "chocolate bar", Boolean.FALSE, 1));
-        return taxService.compute(itemList);
+        return taxService.generateReceipt(itemList);
     }
 
     @GetMapping("/computeInput2")
@@ -36,7 +36,7 @@ public class TaxController {
         final var itemList = new ArrayList<Item>();
         itemList.add(itemFactory.createItem(ItemType.FOOD, new BigDecimal("10.00"), BOX_OF_CHOCOLATE, Boolean.TRUE, 1));
         itemList.add(itemFactory.createItem(ItemType.BEAUTY_PRODUCT, new BigDecimal("47.50"), BOTTLE_OF_PERFUME, Boolean.TRUE, 1));
-        return taxService.compute(itemList);
+        return taxService.generateReceipt(itemList);
     }
 
     @GetMapping("/computeInput3")
@@ -46,6 +46,6 @@ public class TaxController {
         itemList.add(itemFactory.createItem(ItemType.BEAUTY_PRODUCT, new BigDecimal("18.99"), BOTTLE_OF_PERFUME, Boolean.FALSE, 1));
         itemList.add(itemFactory.createItem(ItemType.MEDICAL_PRODUCT, new BigDecimal("9.75"), "packet of headache pills", Boolean.FALSE, 1));
         itemList.add(itemFactory.createItem(ItemType.FOOD, new BigDecimal("11.25"), BOX_OF_CHOCOLATE, Boolean.TRUE, 1));
-        return taxService.compute(itemList);
+        return taxService.generateReceipt(itemList);
     }
 }
