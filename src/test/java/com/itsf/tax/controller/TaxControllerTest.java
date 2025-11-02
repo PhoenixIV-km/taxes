@@ -19,7 +19,7 @@ class TaxControllerTest {
 
     @Test
     void computeInput1Test() throws Exception {
-        mvc.perform(get("/tax/computeInput1"))
+        mvc.perform(get("/tax/computeExample1"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("1 book : 12.49<br/>" +
                         "1 music CD : 16.49<br/>" +
@@ -29,7 +29,7 @@ class TaxControllerTest {
 
     @Test
     void computeInput2Test() throws Exception {
-        mvc.perform(get("/tax/computeInput2"))
+        mvc.perform(get("/tax/computeExample2"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("1 imported box of chocolates : 10.50<br/>" +
                         "1 imported bottle of perfume : 54.65<br/>" +
@@ -38,7 +38,7 @@ class TaxControllerTest {
 
     @Test
     void computeInput3Test() throws Exception {
-        mvc.perform(get("/tax/computeInput3"))
+        mvc.perform(get("/tax/computeExample3"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("1 imported bottle of perfume : 32.19<br/>" +
                         "1 bottle of perfume : 20.89<br/>" +
