@@ -18,7 +18,7 @@ public class ItemFactoryTest {
     public static final BigDecimal PRICE = new BigDecimal("42.42");
     public static final Integer QUANTITY = 4;
 
-    @Autowired // enforce validation
+    @Autowired
     private ItemFactory itemFactory;
 
     @Test
@@ -32,13 +32,13 @@ public class ItemFactoryTest {
     }
 
     @Test
-    void createItemTestTypeTaxed() {
+    void createItemTestItemTaxed() {
         final var item = itemFactory.createItem(ItemType.ENTERTAINMENT, PRICE, ITEM_NAME, true, QUANTITY);
         assertInstanceOf(TaxedItem.class, item);
     }
 
     @Test
-    void createItemTestTypeTaxless() {
+    void createItemTestItemTaxless() {
         final var item = itemFactory.createItem(ItemType.BOOK, PRICE, "da vince code", true, QUANTITY);
         assertInstanceOf(TaxlessItem.class, item);
     }

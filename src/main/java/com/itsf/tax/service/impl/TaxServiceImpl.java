@@ -48,7 +48,7 @@ public class TaxServiceImpl implements TaxService {
                 .append(" : ")
                 .append(itemTaxedPrice)
                 .append("<br/>");
-        log.debug("New line added to receipt: {}", lineResult);
+        log.info("New line added to receipt: {}", lineResult);
         return lineResult.toString();
     }
 }

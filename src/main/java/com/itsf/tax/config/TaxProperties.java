@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class TaxProperties {
 
     /**
-     * Basic sales tax rate applicable on most goods
+     * Basic sales tax rate applicable on taxable goods
      */
     @DecimalMin("0.00")
     private BigDecimal basicRate;
