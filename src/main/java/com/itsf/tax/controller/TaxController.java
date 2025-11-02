@@ -5,6 +5,7 @@ import com.itsf.tax.factory.ItemFactory;
 import com.itsf.tax.service.TaxService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TaxController {
 
     private final TaxService taxService;
+    @Autowired // enforce validation
     private final ItemFactory itemFactory;
 
     @GetMapping(value = "/computeExample1", produces = MediaType.TEXT_HTML_VALUE)
