@@ -14,7 +14,7 @@ public class RoundingUtils {
      * scale 0 and RoundingMode.UP(848.4) = 849
      * 849 * 0.05 = 42.45
      */
-    public static BigDecimal roundingUpToNearestFiveHundredths(final BigDecimal price, final BigDecimal roundingPrecision) {
+    public static BigDecimal roundingUpToNearestPrecision(final BigDecimal price, final BigDecimal roundingPrecision) {
         if (price.compareTo(new BigDecimal(0)) < 0 || roundingPrecision.compareTo(new BigDecimal(0)) < 0) {
             throw new IllegalArgumentException("Price and roundingPrecision should be >= 0");
         }

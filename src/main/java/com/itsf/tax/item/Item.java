@@ -16,8 +16,11 @@ public abstract class Item {
     private final boolean imported;
     private final Integer quantity;
 
+    /**
+     * Taxes are rounded up to nearest precision @see application.properties#tax.rounding-precision
+     */
     public BigDecimal computeTaxes(final BigDecimal basicRate, final BigDecimal importRate, final BigDecimal roundingPrecision) {
-        return RoundingUtils.roundingUpToNearestFiveHundredths(getPrice().multiply(getApplicableTaxRate(basicRate, importRate)), roundingPrecision);
+        return RoundingUtils.roundingUpToNearestPrecision(getPrice().multiply(getApplicableTaxRate(basicRate, importRate)), roundingPrecision);
     }
 
     protected abstract BigDecimal getApplicableTaxRate(BigDecimal basicRate, BigDecimal importRate);
