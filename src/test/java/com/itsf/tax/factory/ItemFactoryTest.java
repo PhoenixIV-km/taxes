@@ -29,6 +29,7 @@ public class ItemFactoryTest {
         assertEquals(ITEM_NAME, item.getName());
         assertTrue(item.isImported());
         assertEquals(QUANTITY, item.getQuantity());
+        assertTrue(item.getType().isTaxable());
     }
 
     @Test

@@ -17,7 +17,7 @@ public class TaxServiceImpl implements TaxService {
     private final TaxProperties taxProperties;
 
     @Override
-    public String generateReceipt(List<Item> itemList) {
+    public String generateReceipt(final List<Item> itemList) {
         final var result = new StringBuilder();
         var totalTaxes = BigDecimal.ZERO;
         var totalGlobal = BigDecimal.ZERO;

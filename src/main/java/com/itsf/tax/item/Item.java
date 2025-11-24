@@ -23,5 +23,5 @@ public abstract class Item {
         return RoundingUtils.roundingUpToNearestPrecision(getPrice().multiply(getApplicableTaxRate(basicRate, importRate)), roundingPrecision);
     }
 
-    protected abstract BigDecimal getApplicableTaxRate(BigDecimal basicRate, BigDecimal importRate);
+    protected abstract BigDecimal getApplicableTaxRate(final BigDecimal basicRate, final BigDecimal importRate);
 }
